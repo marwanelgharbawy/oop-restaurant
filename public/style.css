@@ -1,16 +1,16 @@
 #menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
 .meal-container {
     border: 1px solid #000;
     margin-top: 10px;
-    width: 500px; 
+    width: 500px;
     align-self: stretch;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .add-button {
@@ -18,9 +18,18 @@
     color: black;
     background-color: aqua;
     border-radius: 5px;
-    border: 1px solid black;    
+    border: 1px solid black;
 }
 
 .choice-price {
     margin-left: 10px;
+}
+
+#clear-cart {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 15px;
+    padding: 5px 10px;
 }

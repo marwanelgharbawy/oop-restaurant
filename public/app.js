@@ -16,6 +16,12 @@ const priceElement = document.getElementById('total');
 
 const cart = new Cart();
 
+const clearCartButton = document.getElementById('clear-cart');
+clearCartButton.onclick = () => {
+    cart.clear();
+    renderCart();
+};
+
 // Populate the menu->Section with the pizza category
 for (const meal of pizzaCategory.meals) {
     // Create a div which will be a container for the base meal element and the choices element
@@ -106,8 +112,10 @@ function renderCart() {
             cartItemElement.textContent = `${item.product.name} - $${item.productPrice.toFixed(2)} x ${item.quantity}`;
             cartContainer.appendChild(cartItemElement);
         }
-        priceElement.textContent = `$${cart.totalPrice.toFixed(2)}`;
     }
+    priceElement.textContent = `$${cart.totalPrice.toFixed(2)}`;
 }
+
+renderCart();
 
 // We don't need that much DOM manipulation, the Cart and CartItem classes handle everything
