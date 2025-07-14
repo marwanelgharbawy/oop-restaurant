@@ -86,7 +86,12 @@ for (const meal of pizzaCategory.meals) {
         const choiceLabel = document.createElement('label');
         choiceLabel.className = 'choice-label';
         choiceLabel.textContent = choice.name;
-        // TODO: Link label to input
+        
+        // Link label to input
+        const uniqueId = `choice-${meal.name}-${choice.name}`.replace(/\s+/g, '-');
+        choiceLabel.setAttribute('for', uniqueId);
+        choiceSelector.setAttribute('id', uniqueId);
+        
         choiceContainer.appendChild(choiceLabel);
 
         // Create span for price
