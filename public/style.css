@@ -4,12 +4,11 @@
     align-items: flex-start;
 }
 
-.meal-container {
+.meal-container, .cart-item-container {
     border: 1px solid #000;
     margin-top: 10px;
     width: 500px;
     align-self: stretch;
-    display: flex;
     align-items: center;
 }
 

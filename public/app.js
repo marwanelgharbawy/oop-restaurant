@@ -44,6 +44,7 @@ for (const meal of pizzaCategory.meals) {
         const choiceInputs = choicesElement.querySelectorAll('input');
         console.log("Choice inputs:", choiceInputs);
         const selectedChoices = [];
+        // Loop over each choice input, only take the checked ones
         for (const choiceInput of choiceInputs) {
             if (choiceInput.checked) {
                 // Get the name from the label element next to the input
@@ -54,6 +55,7 @@ for (const meal of pizzaCategory.meals) {
                 }
             }
         }
+        // When this loop is done, we have all selected choices in the selectedChoices array
         console.log("Selected choices:", selectedChoices);
         const cartItem = new CartItem(meal, selectedChoices, 1);
         cart.addItem(cartItem);
@@ -108,10 +110,27 @@ function renderCart() {
         cartContainer.textContent = "Your cart is empty.";
     } else {
         for (const item of cart.cartItems) {
-            const cartItemElement = document.createElement('div');
-            cartItemElement.textContent = `${item.product.name} - $${item.productPrice.toFixed(2)} x ${item.quantity}`;
-            cartContainer.appendChild(cartItemElement);
+            // Cart Item container containing item as inner text and extras as another element
+            const cartItemContainer = document.createElement('div');
+            cartItemContainer.className = 'cart-item-container';
+            
+            cartItemContainer.textContent = `${item.product.name} - $${item.productPrice.toFixed(2)} x ${item.quantity}`;
+
+            // Create a list of selected choices element            
+            if (item.selectedChoices.length > 0) {
+                const selectedChoicesElement = document.createElement('div');
+                selectedChoicesElement.className = 'selected-choices';
+                let choicesText = 'Selected: ';
+                for (const choice of item.selectedChoices) {
+                    choicesText += `${choice.name} - `;
+                }
+                choicesText = choicesText.slice(0, -3); // Remove last 3 characters
+                selectedChoicesElement.textContent = choicesText;
+                cartItemContainer.appendChild(selectedChoicesElement);
+            }
+            cartContainer.appendChild(cartItemContainer);
         }
+        
     }
     priceElement.textContent = `$${cart.totalPrice.toFixed(2)}`;
 }
