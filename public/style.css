@@ -1,0 +1,22 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.meal-container {
+    border: 1px solid #000;
+    margin-top: 10px;
+    width: 500px; 
+    align-self: stretch;
+    display: flex;
+    align-items: center; 
+}
+
+.add-button {
+    margin-left: auto;
+    color: black;
+    background-color: aqua;
+    border-radius: 5px;
+    border: 1px solid black;    
+}
