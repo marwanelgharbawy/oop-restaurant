@@ -113,19 +113,15 @@ function renderCart() {
             // Cart Item container containing item as inner text and extras as another element
             const cartItemContainer = document.createElement('div');
             cartItemContainer.className = 'cart-item-container';
-            
+
             cartItemContainer.textContent = `${item.product.name} - $${item.productPrice.toFixed(2)} x ${item.quantity}`;
 
             // Create a list of selected choices element            
             if (item.selectedChoices.length > 0) {
                 const selectedChoicesElement = document.createElement('div');
                 selectedChoicesElement.className = 'selected-choices';
-                let choicesText = 'Selected: ';
-                for (const choice of item.selectedChoices) {
-                    choicesText += `${choice.name} - `;
-                }
-                choicesText = choicesText.slice(0, -3); // Remove last 3 characters
-                selectedChoicesElement.textContent = choicesText;
+                const choicesText = item.selectedChoices.map(choice => choice.name).join(' - ');
+                selectedChoicesElement.textContent = `Selected: ${choicesText}`;
                 cartItemContainer.appendChild(selectedChoicesElement);
             }
             cartContainer.appendChild(cartItemContainer);
