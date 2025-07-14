@@ -12,6 +12,10 @@ class CartItem {
     return `${this.product.name}-${choiceString.join('-')}`;
   }
 
+  get productPrice() {
+    return this.product.price + this.#calculateExtrasPrice();
+  }
+
   get totalPrice() {
     // (Base price + Extras) * Quantity
     const singleItemPrice = this.product.price + this.#calculateExtrasPrice();
