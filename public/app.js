@@ -59,11 +59,12 @@ for (const meal of pizzaCategory.meals) {
     // Display choices
     const choicesElement = document.createElement('div'); // Group of choices
     choicesElement.className = 'choices-list';
+
     for (const choice of meal.options.choices) {
         const choiceContainer = document.createElement('div'); // Container for each choice
         choiceContainer.className = 'choice-item';
 
-        // Create a "choice selector" element
+        // Create a "choice selector" checkbox or radio button
         const choiceSelector = document.createElement('input'); // For each choice
         choiceSelector.className = 'choice-checkbox';
         if (meal.options.isRadio) {
@@ -77,7 +78,14 @@ for (const meal of pizzaCategory.meals) {
         const choiceLabel = document.createElement('label');
         choiceLabel.className = 'choice-label';
         choiceLabel.textContent = choice.name;
+        // TODO: Link label to input
         choiceContainer.appendChild(choiceLabel);
+
+        // Create span for price
+        const choicePrice = document.createElement('span');
+        choicePrice.className = 'choice-price';
+        choicePrice.textContent = `+$${choice.price.toFixed(2)}`;
+        choiceContainer.appendChild(choicePrice);
 
         choicesElement.appendChild(choiceContainer);
     }
