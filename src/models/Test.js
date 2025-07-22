@@ -75,21 +75,21 @@ function displayCart(cart) {
 }
 // **********************************************************************************************************
 
-console.log('Start shopping\n');
+// console.log('Start shopping\n');
 
-const cart = new Cart(); // Empty Cart
+// const cart = new Cart(); // Empty Cart
 
-displayCart(cart);
+// displayCart(cart);
 
-// Select one MaroPizza with Pepperoni and Jalapeno selected from Options
-const pizzaOrder1 = new CartItem(MaroPizza, [Pepperoni, Jalapeno], 1);
-cart.addItem(pizzaOrder1);
+// // Select one MaroPizza with Pepperoni and Jalapeno selected from Options
+// const pizzaOrder1 = new CartItem(MaroPizza, [Pepperoni, Jalapeno], 1);
+// cart.addItem(pizzaOrder1);
 
-displayCart(cart);
+// displayCart(cart);
 
-// Select two BBQPizza with Ketchup selected from Options
-const pizzaOrder2 = new CartItem(BBQPizza, [Ketchup], 2);
-cart.addItem(pizzaOrder2);
-console.log('Added 2 BBQ Chicken Pizzas to the cart.');
+// // Select two BBQPizza with Ketchup selected from Options
+// const pizzaOrder2 = new CartItem(BBQPizza, [Ketchup], 2);
+// cart.addItem(pizzaOrder2);
+// console.log('Added 2 BBQ Chicken Pizzas to the cart.');
 
-displayCart(cart);
+// displayCart(cart);

@@ -21,6 +21,10 @@ class Cart {
         }
     }
 
+    clear() {
+        this.cartItems = [];
+    }
+
     get totalPrice() {
         let total = 0;
         for (const item of this.cartItems) {

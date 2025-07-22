@@ -12,10 +12,14 @@ class CartItem {
     return `${this.product.name}-${choiceString.join('-')}`;
   }
 
+  // (Base price + Extras)
+  get productPrice() {
+    return this.product.price + this.#calculateExtrasPrice();
+  }
+
   get totalPrice() {
     // (Base price + Extras) * Quantity
-    const singleItemPrice = this.product.price + this.#calculateExtrasPrice();
-    return singleItemPrice * this.quantity;
+    return this.productPrice * this.quantity;
   }
 
   #calculateExtrasPrice() {
