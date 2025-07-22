@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/marwanelgharbawy/ma-restaurant/issues"
   },
-  "homepage": "https://github.com/marwanelgharbawy/ma-restaurant#readme"
+  "homepage": "https://github.com/marwanelgharbawy/ma-restaurant#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
